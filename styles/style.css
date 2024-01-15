@@ -9,6 +9,8 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -35,11 +37,6 @@ fieldset {
 ul,
 ol {
   list-style: none;
-}
-
-.page {
-  display: flex;
-  justify-content: center;
 }
 
 .content {
@@ -87,12 +84,6 @@ ol {
   gap: 15px;
 }
 
-input[type="checkbox"]:checked + span {
-  width: 15px;
-  height: 15px;
-  background: #FFF;
-}
-
 .search-form__label {
   display: flex;
   gap: 5px;
@@ -104,15 +95,20 @@ input[type="checkbox"]:checked + span {
   font-weight: 400;
   line-height: normal;
   width: fit-content;
+  cursor: pointer;
 }
 
 .search-form__label:has(:focus-visible) {
-  padding: 1px;
   outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .search-form__label:active {
   outline: none;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
 }
 
 .search-form__label-text {
@@ -124,7 +120,23 @@ input[type="checkbox"]:checked + span {
   width: 19px;
   height: 19px;
   border: 1px solid #FFF;
-  cursor: pointer;
+  position: relative;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #FFF;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  display: block;
 }
 
 .search-form__textfield {
@@ -172,6 +184,24 @@ input[type="checkbox"]:checked + span {
   line-height: normal;
 }
 
+.button:active {
+  background: #545050;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
+}
+
+
 .search-form__submit-button {
   width: 194px;
   height: 34px;
@@ -214,8 +244,26 @@ input[type="checkbox"]:checked + span {
 }
 
 .content__card-link {
+  margin: 2px;
+  display: block;
   text-decoration: none;
   color: #FFF;
+}
+
+.content__card-link:active {
+  background: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #FFF;
 }
 
 .content__video-card {
