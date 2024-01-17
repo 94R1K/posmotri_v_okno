@@ -10,7 +10,6 @@ html {
 
 .page {
   display: flex;
-  justify-content: center;
   align-items: center;
   max-width: 1200px;
   height: 100%;
@@ -86,11 +85,6 @@ ol {
   line-height: 1;
 }
 
-.search-form__checkbox-list {
-  display: flex;
-  gap: 15px;
-}
-
 .search-form__label {
   display: flex;
   gap: 5px;
@@ -117,28 +111,6 @@ ol {
   width: fit-content;
 }
 
-.search-form__pseudo-checkbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 19px;
-  height: 19px;
-  border: 1px solid #fff;
-  position: relative;
-}
-
-.search-form__pseudo-checkbox::after {
-  content: '';
-  width: 15px;
-  height: 15px;
-  background-color: #fff;
-  display: none;
-}
-
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
-  display: block;
-}
-
 .search-form__textfield {
   min-width: 225px;
   min-height: 27px;
@@ -162,6 +134,33 @@ ol {
 
 .search-form__textfield:focus {
   outline: none;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+  position: relative;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  display: none;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  display: block;
 }
 
 .button {
@@ -200,25 +199,11 @@ ol {
   min-width: 194px;
 }
 
-.content__video-card-description {
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 90%;
-}
-
-.content__list {
+.content__details {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  position: relative;
-  max-height: 298px;
-  overflow-y: auto;
-}
-
-.more-button {
-  margin: 2px;
-  min-width: 439px;
+  align-items: flex-start;
+  gap: 26px;
 }
 
 .title {
@@ -230,15 +215,18 @@ ol {
   text-transform: uppercase;
 }
 
-.content__details {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 26px;
-}
-
 .content__accent {
   color: #545050;
+}
+
+.content__list {
+  display: flex;
+  height: 298px;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  overflow-y: auto;
 }
 
 .content__card-link {
@@ -285,10 +273,22 @@ ol {
   margin-bottom: 6px;
 }
 
+.content__video-card-description {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+}
+
 .content__video-card-thumbnail {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.more-button {
+  margin: 2px;
+  min-width: 439px;
 }
 
 .visually-hidden {
